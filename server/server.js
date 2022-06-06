@@ -7,7 +7,7 @@ const { resolvers, typeDefs } = require("./schema");
 const { authMiddleware } = require("./utils/auth");
 
 const db = require("./config/connection");
-const routes = require("./routes");
+// const routes = require("./routes");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
 //something
-app.use(routes);
+// app.use(routes);
 
 async function startApolloServer() {
   const httpServer = http.createServer(app);
